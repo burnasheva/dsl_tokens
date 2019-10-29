@@ -20,6 +20,7 @@ changeBuildType(RelativeId("RunTests")) {
     steps {
         insert(1) {
             script {
+                executionMode = BuildStep.ExecutionMode.ALWAYS
                 scriptContent = "echo 1234567890"
             }
         }
