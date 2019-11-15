@@ -41,6 +41,7 @@ object RunTests : BuildType({
     params {
         password("password.value", "credentialsJSON:33db4c5c-70f7-4fbf-856d-8f3e9216f1c1")
         password("second.pwd.value", "credentialsJSON:9abede93-e7a4-4bb8-8334-7f549f9dbeb9")
+        password("third.pwd.value", "credentialsJSON:2ca745b1-b0f3-4458-8a8d-745eef6bbd46")
     }
 
     vcs {
