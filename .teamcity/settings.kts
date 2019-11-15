@@ -70,4 +70,8 @@ object RunTests : BuildType({
 object MavenProject : GitVcsRoot({
     name = "maven project"
     url = "https://github.com/burnasheva/maven_unbalanced_messages"
+    authMethod = password {
+        userName = "burnasheva"
+        password = "credentialsJSON:1caa5e34-e021-435b-9b0f-2c54523bedb6"
+    }
 })
