@@ -2,6 +2,7 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.PullRequests
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildFeatures.pullRequests
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.maven
+import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2018_2.vcs.GitVcsRoot
 
 /*
@@ -33,7 +34,20 @@ project {
     vcsRoot(MavenProject)
 
     buildType(RunTests)
+    buildType(RunHelloWorld)
 }
+
+object RunHelloWorld : BuildType({
+    name = "run hello world"
+
+    steps {
+        script {
+            scriptContent = """
+                echo "hello, world!"
+            """.trimIndent()
+        }
+    }
+})
 
 object RunTests : BuildType({
     name = "run tests"
